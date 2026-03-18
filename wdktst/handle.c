@@ -32,3 +32,14 @@ NTSTATUS AyameCreateHandleTable(
 	*HandleTable = handleTable;
 	return STATUS_SUCCESS;
 }
+
+VOID AyameFreeHandleTable(
+	__in PAYAME_HANDLE_TABLE HandleTable
+) {
+	ULONG i, tag;
+	for (i = 0; i < HandleTable->TableSize / HandleTable->SizeOfEntry; ++i)
+		AyameCloseHandle(HandleTable, AyameHandleFromIndex(i));
+	tag = HandleTable->Tag;
+	ExFreePoolWithTag(HandleTable->Table, tag);
+	ExFreePoolWithTag(HandleTable, tag);
+}

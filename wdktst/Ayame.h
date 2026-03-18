@@ -1,5 +1,5 @@
-#ifndef AYAME_H
-#define AYAME_H
+#ifndef _AYAME_H
+#define _AYAME_H
 
 #include <ntifs.h>
 

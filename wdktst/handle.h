@@ -1,5 +1,5 @@
-#ifndef HANDLE_H
-#define HANDLE_H
+#ifndef _HANDLE_H
+#define _HANDLE_H
 
 #include "Ayame.h"
 
@@ -20,6 +20,15 @@ NTSTATUS AyameCreateHandleTable(
 	__in ULONG MaximumHandles,
 	__in ULONG SizeOfEntry,
 	__in ULONG Tag
+);
+
+VOID AyameFreeHandleTable(
+	__in PAYAME_HANDLE_TABLE HandleTable
+);
+
+NTSTATUS AyameCloseHandle(
+	__in PAYAME_HANDLE_TABLE HandleTable,
+	__in HANDLE Handle
 );
 
 #endif
