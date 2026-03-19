@@ -17,6 +17,12 @@ typedef struct _AYAME_HANDLE_TABLE {
 } AYAME_HANDLE_TABLE, *PAYAME_HANDLE_TABLE;
 
 #define AyameHandleFromIndex(Index) ((HANDLE)((ULONG_PTR)(Index) * AYAME_HANDLE_INCREMENT))
+#define AyameEntryFromHandle(HandleTable, Handle) KphEntryFromIndex((HandleTable), KphIndexFromHandle(Handle))
+#define AyameEntryFromIndex(HandleTable, Index) \
+    ((PKPH_HANDLE_TABLE_ENTRY)((ULONG_PTR)(HandleTable)->Table + (Index) * (HandleTable)->SizeOfEntry))
 
+FORCEINLINE BOOLEAN AyameLockAllocatedHandleEntry(
+	__inout PAYAME_HANDLE_TABLE_ENTRY
+);
 
 #endif // !HANDLEP_H

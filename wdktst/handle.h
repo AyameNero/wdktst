@@ -31,4 +31,10 @@ NTSTATUS AyameCloseHandle(
 	__in HANDLE Handle
 );
 
+BOOLEAN AyameValidHandle(
+	__in PAYAME_HANDLE_TABLE HandleTable,
+	__in HANDLE Handle,
+	__out_opt PAYAME_HANDLE_TABLE_ENTRY* Entry
+);
+
 #endif

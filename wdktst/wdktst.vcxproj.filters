@@ -24,6 +24,9 @@
     <ClCompile Include="handle.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="handlep.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="handle.h">
@@ -33,6 +36,9 @@
       <Filter>Файлы заголовков\include</Filter>
     </ClInclude>
     <ClInclude Include="handlep.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="sync.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
